@@ -230,7 +230,8 @@ total_money = 0
 safe_point = 0
 print("===== KBC Harry Potter Edition =====")
 print("Answer correctly to win money!\n")
-for ques in questions:
+for index, ques in enumerate(questions, start=1):
+    print(f"\nQuestion {index}")
     print(ques["question"])
     print("Question for Rs.", ques["money"])
     for option in ques["options"]:
@@ -250,5 +251,7 @@ for ques in questions:
                 print("You take home Rs.", safe_point)
                 break
 
+        total_money = safe_point
+        break
 print("Final winnings:", total_money)
     
